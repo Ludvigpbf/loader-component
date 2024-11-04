@@ -1,7 +1,7 @@
 {
   "name": "@flyckt-coding/loaders",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A collection of loaders for React applications",
   "author": {
     "name": "Flyckt Coding"
