@@ -1,10 +1,30 @@
 {
-  "name": "flyckt-coding-loaders",
+  "name": "@flyckt-coding/loaders",
   "private": false,
-  "version": "0.1.1",
+  "version": "1.0.0",
+  "description": "A collection of loaders for React applications",
+  "author": {
+    "name": "Flyckt Coding"
+  },
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/styles/index.css"
+  },
+  "files": [
+    "/dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,10 +32,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/sass": "^1.45.0",
+    "@types/node": "^22.8.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.80.6"
+    "sass": "^1.80.6",
+    "vite-plugin-dts": "^4.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
