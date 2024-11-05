@@ -1,6 +1,6 @@
 # Flyckt Coding Loaders
 
-A package with three customizable loaders (DotsLoader, InfiniteBarLoader, SpinnerLoader) for React applications, offering options for size, color, and animation.
+A package with customizable loaders for React applications, offering options for size, color, animation and more.
 
 ## Installation
 Install the package via npm:
@@ -51,7 +51,7 @@ import { DotsLoader } from "@flycktcoding/loaders";
 <hr>
 
 ### 2. InfiniteBarLoader
-A rectangular loader with a bar that moves infinitely around the border.
+A bar-loader with that moves infinitely inside it.
 
 **Example**
 ```ts
@@ -101,14 +101,10 @@ import { SpinnerLoader } from "@flycktcoding/loaders";
 
 
 ## Styles
-Each loader has default styling that can be customized by overriding the provided CSS classes.
+Each loader has default styling using CSS-in-JS with @emotion/react.<br> 
+The styling and animations can in some cases be customized by adding your own classes to the loaders.
 
-Make sure to import the required CSS or SCSS files for each loader in your application:
-```ts
-import "@flycktcoding/loaders/dist/Dots-loader.css";
-import "@flycktcoding/loaders/dist/Infinite-bar-loader.scss";
-import "@flycktcoding/loaders/dist/Spinner-loader.css";
-```
+
 
 ## License
 
