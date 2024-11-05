@@ -21,7 +21,7 @@
     "/dist",
     "README.md"
   ],
-  "homepage": "https://www.flycktcoding.com",
+  "homepage": "https://github.com/flycktcoding/loader#readme",
   "keywords": ["react", "loader", "spinner", "component" ],
   "publishConfig": {
     "access": "public"
