@@ -1,23 +1,11 @@
-import "./styles/Spinner-loader.css";
+/** @jsxImportSource @emotion/react */
+import { SpinnerLoaderStyles, sizes } from "./SpinnerLoaderStyles";
 
 export interface SpinnerLoaderProps {
   size?: "sm" | "md" | "lg";
   spinnerColor?: string;
   backgroundColor?: string;
 }
-
-const small = {
-  width: "20px",
-  height: "20px",
-};
-const medium = {
-  width: "40px",
-  height: "40px",
-};
-const large = {
-  width: "60px",
-  height: "60px",
-};
 
 const SpinnerLoader: React.FC<SpinnerLoaderProps> = ({
   size,
@@ -27,19 +15,14 @@ const SpinnerLoader: React.FC<SpinnerLoaderProps> = ({
   return (
     <div className="spinner-loader">
       <div
-        className={`spinner-loader__spinner`}
-        style={
-          (size === "sm"
-            ? small
-            : size === "md"
-            ? medium
-            : size === "lg"
-            ? large
-            : {}) && {
-            borderColor: backgroundColor,
-            borderTopColor: spinnerColor,
-          }
-        }
+        css={[
+          SpinnerLoaderStyles,
+          sizes[size ? size : "md"],
+          {
+            borderColor: `${backgroundColor ? backgroundColor : "#f3f3f3"}`,
+            borderTopColor: `${spinnerColor ? spinnerColor : "#292a2b"}`,
+          },
+        ]}
       ></div>
     </div>
   );

@@ -1,6 +1,3 @@
-// index.ts
-
-import './styles/index.css';
 
 export { default as Dots } from './loaders/dots-loader/Dots';
 export { default as Spinner } from './loaders/spinner-loader/Spinner';

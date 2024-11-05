@@ -1,4 +1,5 @@
-import "./styles/Dots-loader.css";
+/** @jsxImportSource @emotion/react */
+import { DotsWrapperStyle, DotsLoaderStyle } from "./DotsLoaderStyles";
 
 interface DotsProps {
   wrapperClassName?: string;
@@ -14,32 +15,31 @@ const DotsLoader: React.FC<DotsProps> = ({
   wrapperClassName,
   loaderClassName,
   dotsNumbers = 3,
-  dotSize = 10,
-  dotColor = "gray",
+  dotSize,
+  dotColor,
   dotPadding,
   dotMargin,
 }) => {
   const dots = Array.from({ length: dotsNumbers }, (_, index) => (
     <div
       key={index}
-      className={`dots-loader${loaderClassName ? ` ${loaderClassName}` : ""}`}
-      style={{
-        animationDelay: `${index * 0.2}s`,
-        width: `${dotSize}px`,
-        height: `${dotSize}px`,
-        backgroundColor: `${dotColor}`,
-        padding: `${dotPadding}px`,
-        margin: `${dotMargin}px`,
-      }}
+      css={[
+        DotsLoaderStyle,
+        {
+          animationDelay: `${index * 0.2}s`,
+          width: `${dotSize ? dotSize : 10}px`,
+          height: `${dotSize ? dotSize : 10}px`,
+          backgroundColor: `${dotColor ? dotColor : "gray"}`,
+          padding: `${dotPadding ? dotPadding : 5}px`,
+          margin: `${dotMargin ? dotMargin : 10}px`,
+        },
+      ]}
+      className={loaderClassName}
     ></div>
   ));
 
   return (
-    <div
-      className={`dots-container${
-        wrapperClassName ? ` ${wrapperClassName}` : ""
-      }`}
-    >
+    <div css={DotsWrapperStyle} className={wrapperClassName}>
       {dots}
     </div>
   );

@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <Spinner />
-      <Dots />
-      <InfiniteBar />
+      <Dots wrapperClassName="hello"/>
+      <InfiniteBar borderColor="green" />
     </>
   );
 }

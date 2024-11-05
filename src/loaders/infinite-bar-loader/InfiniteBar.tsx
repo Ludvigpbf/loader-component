@@ -1,4 +1,10 @@
-import "./styles/Infinite-bar-loader.css";
+/** @jsxImportSource @emotion/react */
+import { CSSObject } from "@emotion/react";
+
+import {
+  infiniteBarWrapperStyle,
+  infiniteBarLoaderStyle,
+} from "./InfiniteBarStyles";
 
 export interface InfiniteBarLoaderProps {
   width?: "sm" | "md" | "lg";
@@ -6,6 +12,8 @@ export interface InfiniteBarLoaderProps {
   backgroundColor?: string;
   borderColor?: string;
   animationDuration?: number;
+  wrapperClassName?: string;
+  loaderClassName?: string;
 }
 
 const sizes = {
@@ -20,24 +28,30 @@ const InfiniteBarLoader: React.FC<InfiniteBarLoaderProps> = ({
   loaderColor,
   borderColor,
   animationDuration,
+  wrapperClassName,
+  loaderClassName,
 }) => {
   return (
     <div
-      className="infinite-bar-loader"
-      style={
+      css={[
+        infiniteBarWrapperStyle,
         {
           ...sizes[width],
           backgroundColor: backgroundColor,
           "--before-border-color": borderColor,
-        } as unknown as React.CSSProperties
-      }
+        } as CSSObject,
+      ]}
+      className={wrapperClassName}
     >
       <div
-        className={`infinite-bar-loader__bar`}
-        style={{
-          backgroundColor: loaderColor,
-          animationDuration: `${animationDuration}s`,
-        }}
+        css={[
+          infiniteBarLoaderStyle,
+          {
+            backgroundColor: loaderColor,
+            animationDuration: `${animationDuration}s`,
+          },
+        ]}
+        className={loaderClassName}
       ></div>
     </div>
   );

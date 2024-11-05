@@ -1,7 +1,7 @@
 {
   "name": "@flyckt-coding/loaders",
   "private": false,
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "A collection of loaders for React applications",
   "author": {
     "name": "Flyckt Coding"
@@ -31,12 +31,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
     "@types/node": "^22.8.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.80.6",
-    "vite-plugin-dts": "^4.3.0",
-    "vite-plugin-lib-inject-css": "^2.1.1"
+    "vite-plugin-dts": "^4.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
